@@ -1,5 +1,4 @@
 import express from "express";
-import colors from "colors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -25,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://daily-task-dashboard-aua7vyg0k-wisdomweb0.vercel.app",
     credentials: true,
   })
 );
