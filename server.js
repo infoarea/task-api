@@ -1,4 +1,5 @@
 import express from "express";
+import colors from "colors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -22,12 +23,12 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 // environment vars
 const PORT = process.env.PORT || 5050;
@@ -52,5 +53,5 @@ app.use(errorHandler);
 // app listen
 app.listen(PORT, () => {
   mongoDBConnect();
-  console.log(`server is running on port ${PORT}`);
+  console.log(`server is running on port ${PORT}`.bgBlue.black);
 });
